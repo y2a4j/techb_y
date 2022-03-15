@@ -9,13 +9,13 @@
     //データベースへの接続
     $dsn = 'database';
     $user = 'user';
-    $password = 'passwird';
+    $password = 'password';
     $pdo = new PDO($dsn, $user, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
     $tablename = "tablename";
 
     //テーブルがあるかの確認、該当するテーブルがなかったらテーブルの作成
-    //m04_2　データベースにテーブルを作成
+    //データベースにテーブルを作成
     $sql = "CREATE TABLE IF NOT EXISTS $tablename"
     ." ("
     . "id INT AUTO_INCREMENT PRIMARY KEY,"
@@ -169,7 +169,7 @@
         
     <?php
     //コメントの表示
-    //m4_06　テーブルのデータを取得し表示
+    //テーブルのデータを取得し表示
     $sql = "SELECT * FROM $tablename";
     $stmt = $pdo->query($sql);
     $results = $stmt->fetchAll();
